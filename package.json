@@ -50,6 +50,7 @@
     "@uniformdev/context-gtag": "16.0.0",
     "@uniformdev/context-next": "16.0.0",
     "@uniformdev/context-react": "16.0.0",
+    "@uniformdev/optimize-tracker-analytics": "^14.2.0",
     "analytics": "^0.7.5",
     "cookie": "^0.4.2",
     "next": "^12.1.5",

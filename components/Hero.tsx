@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ComponentProps } from "@uniformdev/canvas-react";
 import Splitter from "./Splitter";
+// Import Optimize Analytics plugin
+import { addAnalyticsPlugin } from '@uniformdev/optimize-tracker-analytics';
 
 type HeroProps = ComponentProps<{
   title: string;
@@ -53,7 +55,13 @@ export function Hero({
           </div>
         </div>
       </div>
+      <Personalize variations={variations} trackingEventName="heroPersonalized" />
       <Splitter />
     </>
   );
 }
+export const createLocalTracker = (ctx?: NextPageContext): Tracker =>
+  createDefaultTracker({
+    intents: intentManifest as DeliveryAPIResult,
+    addPlugins: [addAnalyticsPlugin({ analytics })], // Pass Analytics plugin to tracker
+  });
